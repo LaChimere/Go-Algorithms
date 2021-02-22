@@ -16,7 +16,7 @@ func partition(a []int, low, high int) int {
 	return low
 }
 
-// QuickSort returns the sorted slice.
+// QuickSort sorts the given slice.
 func QuickSort(a []int) {
 	if len(a) <= 1 {
 		return
