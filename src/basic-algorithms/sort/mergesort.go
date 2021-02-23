@@ -22,13 +22,14 @@ func merge(a, b []int) []int {
 	return res
 }
 
-func MergeSort(arr []int) []int {
-	if len(arr) < 2 {
-		return arr
+// MergeSort returns the sorted slice but does not modify the original one.
+func MergeSort(a []int) []int {
+	if len(a) < 2 {
+		return a
 	}
 
-	mid := len(arr) / 2
-	a := MergeSort(arr[:mid])
-	b := MergeSort(arr[mid:])
-	return merge(a, b)
+	mid := len(a) / 2
+	leftHalf := MergeSort(a[:mid])
+	rightHalf := MergeSort(a[mid:])
+	return merge(leftHalf, rightHalf)
 }
