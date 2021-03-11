@@ -1,6 +1,6 @@
-package mySort
+package search
 
-func lower(a []int, k int) (int, bool) {
+func lowerBound(a []int, k int) (int, bool) {
 	low, high := 0, len(a)-1
 
 	for low < high {
@@ -15,7 +15,7 @@ func lower(a []int, k int) (int, bool) {
 	return low, a[low] == k
 }
 
-func upper(a []int, k int) (int, bool) {
+func upperBound(a []int, k int) (int, bool) {
 	low, high := 0, len(a)-1
 
 	for low < high {
@@ -33,13 +33,13 @@ func upper(a []int, k int) (int, bool) {
 func BinarySearch(a []int, k int) []int {
 	res := make([]int, 2)
 
-	if idx, ok := lower(a, k); !ok {
+	if idx, ok := lowerBound(a, k); !ok {
 		res[0] = -1
 	} else {
 		res[0] = idx
 	}
 
-	if idx, ok := upper(a, k); !ok {
+	if idx, ok := upperBound(a, k); !ok {
 		res[1] = -1
 	} else {
 		res[1] = idx
