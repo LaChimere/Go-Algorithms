@@ -22,7 +22,6 @@ func merge(a, b []int) []int {
 	return res
 }
 
-// MergeSort returns the sorted slice but does not modify the original one.
 func MergeSort(a []int) []int {
 	if len(a) < 2 {
 		return a
