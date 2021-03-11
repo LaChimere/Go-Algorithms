@@ -1,4 +1,4 @@
-package sort
+package mySort
 
 func partition(a []int, low, high int) int {
 	pivot := a[low]
