@@ -16,31 +16,31 @@ package sorts
 //	return low
 //}
 
-func partition(a []int, low, high int) int {
-	pivot, low, high := a[low], low-1, high+1
+func partition(values []int, low, high int) int {
+	pivot, low, high := values[low], low-1, high+1
 	for low < high {
-		for low++; a[low] < pivot; low++ {
+		for low++; values[low] < pivot; low++ {
 		}
-		for high--; a[high] > pivot; high-- {
+		for high--; values[high] > pivot; high-- {
 		}
 		if low < high {
-			a[low], a[high] = a[high], a[low]
+			values[low], values[high] = values[high], values[low]
 		}
 	}
 	return high
 }
 
-func QuickSort(a []int) {
-	if len(a) < 2 {
+func QuickSort(values []int) {
+	if len(values) < 2 {
 		return
 	}
-	quicksort(a, 0, len(a)-1)
+	quicksort(values, 0, len(values)-1)
 }
 
-func quicksort(a []int, low, high int) {
+func quicksort(values []int, low, high int) {
 	if low < high {
-		pivotPos := partition(a, low, high)
-		quicksort(a, low, pivotPos-1)
-		quicksort(a, pivotPos+1, high)
+		pivotPos := partition(values, low, high)
+		quicksort(values, low, pivotPos-1)
+		quicksort(values, pivotPos+1, high)
 	}
 }

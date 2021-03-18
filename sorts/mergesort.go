@@ -22,13 +22,13 @@ func merge(a, b []int) []int {
 	return res
 }
 
-func MergeSort(a []int) []int {
-	if len(a) < 2 {
-		return a
+func MergeSort(values []int) []int {
+	if len(values) < 2 {
+		return values
 	}
 
-	mid := len(a) / 2
-	leftHalf := MergeSort(a[:mid])
-	rightHalf := MergeSort(a[mid:])
+	mid := len(values) / 2
+	leftHalf := MergeSort(values[:mid])
+	rightHalf := MergeSort(values[mid:])
 	return merge(leftHalf, rightHalf)
 }

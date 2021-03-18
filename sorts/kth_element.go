@@ -1,17 +1,17 @@
 package sorts
 
-func kthElement(a []int, low, high, kth int) int {
+func kthElement(values []int, low, high, kth int) int {
 	if low >= high {
-		return a[kth]
+		return values[kth]
 	}
 
-	pivotPos := partition(a, low, high)
+	pivotPos := partition(values, low, high)
 	if kth <= pivotPos {
-		return kthElement(a, low, pivotPos, kth)
+		return kthElement(values, low, pivotPos, kth)
 	}
-	return kthElement(a, pivotPos+1, high, kth)
+	return kthElement(values, pivotPos+1, high, kth)
 }
 
-func KthElement(a []int, kth int) int {
-	return kthElement(a, 0, len(a)-1, kth)
+func KthElement(values []int, kth int) int {
+	return kthElement(values, 0, len(values)-1, kth)
 }
