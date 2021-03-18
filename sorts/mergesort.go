@@ -1,4 +1,4 @@
-package mySort
+package sorts
 
 func merge(a, b []int) []int {
 	var res = make([]int, len(a)+len(b))

@@ -1,4 +1,4 @@
-package search
+package searches
 
 func lowerBound(a []int, k int) (int, bool) {
 	low, high := 0, len(a)-1

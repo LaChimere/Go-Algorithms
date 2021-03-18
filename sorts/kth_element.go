@@ -1,4 +1,4 @@
-package mySort
+package sorts
 
 func kthElement(a []int, low, high, kth int) int {
 	if low >= high {
